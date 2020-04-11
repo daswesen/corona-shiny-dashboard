@@ -1,0 +1,13 @@
+name: corona-shiny-dashboard
+title: corona-shiny-dashboard
+username:
+account: daswesen
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2101258
+bundleId: 3001185
+url: https://daswesen.shinyapps.io/corona-shiny-dashboard/
+when: 1586640842.5505
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: README.md
