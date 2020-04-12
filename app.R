@@ -34,20 +34,20 @@ num_cols <- ncol(my_infections) - 1
     sidebarPanel(
       
       radioButtons("variant", 
-                   p("Infections / Deaths"),
+                   p("Infections / Deaths:"),
                    choices = list("Infections" = 1, "Deaths" = 2), 
                    selected = 1),
       
       radioButtons("yaxis", 
-                   p("Darstellung der Werte auf der y-Achse"),
+                   p("y Axis::"),
                    choices = list("Linear" = 1, "Log2" = 2), 
                    selected = 1),
       
       sliderInput("ab_wann", 
-                  p("Plot ab Tag x des ersten Vorkommens"), 
+                  p("Plot after Day of case number:"), 
                   min = 0, max = num_cols, value = 1),
       
-      checkboxGroupInput('test', 'Länder', my_countries$Country, selected = c("Germany", "France", "Italy")),
+      checkboxGroupInput('test', 'Countries:', my_countries$Country, selected = c("Germany", "France", "Italy", "US")),
     ),
     mainPanel(
       h2("Corona Dashboard"),
@@ -101,15 +101,15 @@ num_cols <- ncol(my_infections) - 1
         ggplot(d2, aes(id,value, col=variable)) + 
           geom_line() +
           #scale_y_continuous(trans = 'log2')+
-          xlab("Date") + 
-          ylab("Infections")
+          xlab("Day") + 
+          ylab("Cases")
       }
       else {
         ggplot(d2, aes(id,value, col=variable)) + 
           geom_line() +
           scale_y_continuous(trans = 'log2')+
-          xlab("Date") + 
-          ylab("Infections")
+          xlab("Day") + 
+          ylab("Cases")
       }
       
     })
