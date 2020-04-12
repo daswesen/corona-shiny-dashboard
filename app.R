@@ -123,10 +123,10 @@ tests <- tests %>%
       d <- melt(my_data, id.vars="Day")
       
       d <- d %>%
-        filter(variable == input$test)
+        filter(variable %in% input$test)
       
       d2 <- d %>%
-        filter(value >= input$ab_wann) %>%
+        filter(value > input$ab_wann-1) %>%
         group_by(variable) %>%
         mutate(id = row_number())
       
@@ -174,7 +174,7 @@ tests <- tests %>%
       d <- melt(my_data, id.vars="Day")
       
       d <- d %>%
-        filter(variable == input$test)
+        filter(variable %in% input$test)
       
 
       
@@ -190,7 +190,7 @@ tests <- tests %>%
       
 
       if(input$yaxis == 1) {
-        ggplot(cases_vs_population, aes(Day,value, col=variable)) + 
+        ggplot(cases_vs_population, aes(id,value, col=variable)) + 
           geom_line() +
           ggtitle("Corona-related Cases per 100.000 people per Country") + 
           xlab("Day") + 
@@ -199,7 +199,7 @@ tests <- tests %>%
       else {
 
         
-        ggplot(cases_vs_population, aes(Day,value, col=variable)) + 
+        ggplot(cases_vs_population, aes(id,value, col=variable)) + 
           geom_line() +
           ggtitle("Corona-related Cases per 100.000 people per Country") + 
           scale_y_continuous(trans = 'log2')+
