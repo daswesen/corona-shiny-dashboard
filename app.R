@@ -60,14 +60,14 @@ tests <- tests %>%
                    selected = 1),
       
       sliderInput("ab_wann", 
-                  p("Plot after Day of case number:"), 
-                  min = 0, max = num_cols, value = 1),
+                  p("Plot after Day of case number/after x in 100.000:"), 
+                  min = 0, max = num_cols, value = 0),
       
       checkboxGroupInput('test', 'Countries:', my_countries$Country, selected = c("Germany", "France", "Italy", "New Zealand", "US")),
     ),
     mainPanel(
       #h2("Corona Dashboard"),
-      HTML("<p>This is a demo how R and Shiny can be used to create an interactive dashboard, in this case to look at Corona data. It started with an <a href='https://tom.alby.de/using-r-to-plot-corona-data/'>article</a> how to use R and ggplot2 to visualize the data. The code for this dashboard is on <a href='https://github.com/daswesen/corona-shiny-dashboard'>GitHub</a>.</p>. Please contact me at tom@alby.de for comments."),
+      HTML("<p>This is a demo how R and Shiny can be used to create an interactive dashboard, in this case to look at Corona data. It started with an <a href='https://tom.alby.de/using-r-to-plot-corona-data/'>article</a> how to use R and ggplot2 to visualize the data. The code for this dashboard is on <a href='https://github.com/daswesen/corona-shiny-dashboard'>GitHub</a>. Please contact me at tom@alby.de for comments.</p>"),
       strong("Please note that this is just a demo of Shiny, I am not a medical expert and I cannot guarantee that data and software code are error-free."),
       tags$hr(),
       HTML("<p>Data comes from the <a href='https://github.com/CSSEGISandData/COVID-19'>Johns Hopkins University'</a> (infection and deaths data), <a href='https://www.worldometers.info/world-population/population-by-country/'>Worldmeter</a> (population data), <a href='https://ourworldindata.org/covid-testing'>Our World in Data</a> (test data), and the <a href='https://influenza.rki.de'>RKI</a> (influenza data for Germany).</p>"),
