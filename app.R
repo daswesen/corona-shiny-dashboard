@@ -176,15 +176,17 @@ tests <- tests %>%
       d <- d %>%
         filter(variable == input$test)
       
-      d2 <- d %>%
-        filter(value >= input$ab_wann) %>%
-        group_by(variable) %>%
-        mutate(id = row_number())
+
       
-      cases_vs_population <- d2 %>%
+       d2 <- d %>%
         #deaths_vs_population <- d_deaths %>%
         left_join(population) %>%
         mutate(value = (value/population)*100000)
+      
+      cases_vs_population <- d2 %>%
+        filter(value >= input$ab_wann) %>%
+        group_by(variable) %>%
+        mutate(id = row_number())
       
 
       if(input$yaxis == 1) {
