@@ -143,7 +143,7 @@ tests <- tests %>%
         ggplot(d2, aes(id,value, col=variable)) + 
           geom_line() +
           ggtitle("Corona-related Cases") + 
-          scale_y_continuous(trans = 'Log2 Scale')+
+          scale_y_continuous(trans = 'log2')+
           xlab("Day") + 
           ylab("Cases")
         
@@ -202,7 +202,7 @@ tests <- tests %>%
         ggplot(cases_vs_population, aes(id,value, col=variable)) + 
           geom_line() +
           ggtitle("Corona-related Cases per 100.000 people per Country") + 
-          scale_y_continuous(trans = 'Log2 Scale')+
+          scale_y_continuous(trans = 'log2')+
           xlab("Day") + 
           ylab("Number of Cases per 100.000")
       }
