@@ -67,7 +67,7 @@ tests <- tests %>%
     ),
     mainPanel(
       #h2("Corona Dashboard"),
-      HTML("<p>This is a demo how R and Shiny can be used to create an interactive dashboard, in this case to look at Corona data. It started with an <a href='https://tom.alby.de/using-r-to-plot-corona-data/'>article</a> how to use R and ggplot2 to visualize the data. The code for this dashboard is on <a href='https://github.com/daswesen/corona-shiny-dashboard'>GitHub</a>. Please contact me at tom@alby.de for comments.</p>"),
+      HTML("<p>This is a demo how R and Shiny can be used to create an interactive dashboard, in this case to look at Corona data. It started with an <a href='https://tom.alby.de/using-r-to-plot-corona-data/'>article</a> how to use R and ggplot2 to visualize the data. The code for this dashboard is on <a href='https://github.com/daswesen/corona-shiny-dashboard'>GitHub</a>. Please contact me at tom@alby.de if you have comments or found a bug.</p>"),
       strong("Please note that this is just a demo of Shiny, I am not a medical expert and I cannot guarantee that data and software code are error-free."),
       tags$hr(),
       HTML("<p>Data comes from the <a href='https://github.com/CSSEGISandData/COVID-19'>Johns Hopkins University'</a> (infection and deaths data), <a href='https://www.worldometers.info/world-population/population-by-country/'>Worldmeter</a> (population data), <a href='https://ourworldindata.org/covid-testing'>Our World in Data</a> (test data), and the <a href='https://influenza.rki.de'>RKI</a> (influenza data for Germany).</p>"),
