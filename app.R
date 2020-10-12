@@ -228,6 +228,7 @@ tests <- tests %>%
       mutate(Influenza17_18 = case_when(Day < "2018-12-31" ~ Influenza)) %>%
       mutate(Influenza19_20 = case_when(Day > "2018-12-31" ~ Influenza)) %>%
       select(-Influenza) %>%
+      filter(!is.na(Influenza19_20) | !is.na(Influenza17_18)) %>%
       melt(., id.vars="Day") %>%
       filter(!is.na(value)) %>%
       mutate(week = lubridate::week((Day))) %>%
@@ -261,6 +262,7 @@ tests <- tests %>%
       mutate(Influenza17_18 = case_when(Day < "2018-12-31" ~ Influenza)) %>%
       mutate(Influenza19_20 = case_when(Day > "2018-12-31" ~ Influenza)) %>%
       select(-Influenza) %>%
+      filter(!is.na(Influenza19_20) | !is.na(Influenza17_18)) %>%
       melt(., id.vars="Day") %>%
       filter(!is.na(value)) %>%
       filter(value != 0) %>%
