@@ -7,7 +7,7 @@ infections <- read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-1
 deaths<- read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv")
 tests <- read_csv("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/testing/covid-testing-all-observations.csv")
 population <- read_delim("population.csv",  "\t", escape_double = FALSE, trim_ws = TRUE)
-grippe <- read_delim("https://raw.githubusercontent.com/daswesen/analyzing-corona-data-with-r/master/grippe.csv", ";", escape_double = FALSE, col_types = cols(date = col_date(format = "%d.%m.%y"), infected = col_integer()), trim_ws = TRUE)
+grippe <- read_delim("grippe.csv", ";", escape_double = FALSE, col_types = cols(date = col_date(format = "%d.%m.%y"), infected = col_integer()), trim_ws = TRUE)
 
 population <- population %>%
     #filter(`Country` == "China" | `Country` == "France" | `Country` == "Germany" | `Country` == "Italy" | `Country` == "United States" | `Country` == "New Zealand" | `Country` == "Israel") %>%
